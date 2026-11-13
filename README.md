@@ -6,11 +6,26 @@
 
 ## 怎么用
 
-1. 准备一个刷分 Bot（比如 Grok Bot），并装好 `clawby-data` 这套 42.space 脚本。
-2. 把下面的「短提示词」或「完整提示词」整段贴进 Bot 的系统提示词。短的能跑起来，完整版细节更多。
-3. 登录时由你自己提供 42 邀请码、邮箱和 PIN。不要把这些信息提交回本仓库，也不要发到公开帖子里。
+1. 准备一个能跑命令的刷分 Bot（比如 Grok Bot）。
+2. 先给这个 Bot 装上官方的 `clawby-data` 技能，里面带着 42.space 脚本。装法见下一节。
+3. 把本页的「短提示词」或「完整提示词」整段贴进 Bot 的系统提示词。短的能跑起来，完整版细节更多。
+4. 在和 Bot 的私有对话里提供你的 42 邀请码、邮箱和 PIN。不要发到公开地方，也不要提交回本仓库。
 
-关于脚本路径：`/home/box/agent-data/workflows/clawby-data/script/42space/` 不是你自己电脑上的文件夹，而是 Bot 云电脑里脚本所在的位置。你不用打开它，也不用在 Windows 上找这个路径。Bot 跑 `status`、`balance`、开刷这些命令时，会自己进入这个目录。
+## 怎么安装 clawby-data
+
+`clawby-data` 是 [Clawby](https://www.openclawby.com) 的官方技能，不是本仓库里的文件。42.space 刷分要用的脚本都在这个技能里。
+
+你不用自己打开文件夹，也不用在电脑上敲命令。直接对刷分 Bot 发下面这段，让它自己下载并装好：
+
+```
+帮我安装 Clawby 的 clawby-data 技能。请下载 https://www.openclawby.com/clawby-data.zip，解压到技能目录（Grok Bot 一般是 /home/box/agent-data/workflows/clawby-data/），然后打开 SKILL.md 按说明执行。刷 42.space Fast 不需要先准备 CLAWBY_API_KEY。
+```
+
+官方打包文件：[clawby-data.zip](https://www.openclawby.com/clawby-data.zip)。源码在 [openclawby/openclawby-skills](https://github.com/openclawby/openclawby-skills)。
+
+装好后，42.space 脚本会落在 Bot 云电脑的 `clawby-data/script/42space/` 目录里。这不是你自己电脑上的路径，你不用去找。Bot 跑登录、查余额、开刷时会自己进入这个目录。
+
+Fast 刷量不强制要求 Clawby API Key。如果以后要用 AI 选盘这类功能，再去 [openclawby.com](https://www.openclawby.com/) 免费注册，并把 key 交给 Bot。
 
 ## 短提示词
 
